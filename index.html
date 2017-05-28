@@ -1,18 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-	<h1>Cellular Automata</h1>
+<header>
 
-	<canvas id="ca"></canvas>
-	
-	<script type="text/javascript" src="ca.js"></script>
-	<script type="text/javascript">
-		startAutomata();
-	</script>
+    <h1>Cellular Automata</h1>
+
+</header>
+
+<section id="controls">
+
+    <div id="inputelements">
+
+        <div class="row">
+
+            <span class="inputfield">
+                <label for="generations">Generationen</label>
+                <input type="number" id="generations" value="200"/>
+            </span>
+            <span class="inputfield">
+                <label for="width">Breite</label>
+                <input type="number" id="width" value="300"/>
+            </span>
+            <span class="fieldset">
+                <a href="http://mathworld.wolfram.com/ElementaryCellularAutomaton.html">
+                    <label for="rule">Wolfram-Regel</label>
+                </a>
+                <input type="number" id="rule" min="0" max="255" value="90"/>
+            </span>
+
+        </div>
+
+        <div class="row">
+            <label for="randomStart">Zufällige Startaufstellung</label>
+            <input type="checkbox" id="randomStart"/>
+        </div>
+
+        <div class="row">
+            <button onclick="startAutomata()">Automat starten</button>
+        </div>
+    </div>
+</section>
+
+<div id="canvasWrapper">
+    <canvas id="ca"></canvas>
+</div>
+
+<script type="text/javascript" src="ca.js"></script>
 </body>
 </html>
